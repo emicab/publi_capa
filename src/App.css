@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,900;1,500&display=swap');
+
+.menu{
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 50%);
+    width: 100%;
+    height: 120px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+
+    & .contenedor_colores{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 300px;
+        margin: 0 auto;
+
+        & button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+
+            &:hover{
+                filter: brightness(1.3);
+                border: 3px solid #333
+            }
+        }
+
+        & .color1{
+            background-color: #cb1a1a;
+            transition: .2s;
+
+            &::after {
+                content: 'ROJO';
+                position: relative;
+                top: -30px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: #FFF;
+                opacity: 0;
+            }
+
+            &:hover::after{
+                opacity: 1;
+                
+            }
+        }
+        & .color2{
+            background-color: #000000;
+            &::after {
+                content: 'NEGRO';
+                position: relative;
+                top: -30px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: #FFF;
+                opacity: 0;
+            }
+
+            &:hover::after{
+                opacity: 1;
+                
+            }
+        }
+        & .color3{
+            background-color: #102c68;
+            
+            &::after {
+                content: 'AZUL MARINO';
+                position: relative;
+                top: -40px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: #FFF;
+                opacity: 0;
+                text-align: center;
+                text-size-adjust: auto;
+            }
+
+            &:hover::after{
+                opacity: 1;
+                
+            }
+        }
+        & .color4{
+            background-color: #ea45dd;
+            &::after {
+                content: 'ROSA';
+                position: relative;
+                top: -30px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 900;
+                color: #FFF;
+                opacity: 0;
+            }
+
+            &:hover::after{
+                opacity: 1;
+                
+            }
+        }
+    }
+}
