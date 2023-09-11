@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import Lights from "./components/Lights";
 import { ContactShadows, PresentationControls } from "@react-three/drei";
 import { CineonToneMapping } from "three";
-import Model from "./components/model";
+import Model from "./components/Model";
 import Env from "./components/Env";
 import Menu from "./components/Menu";
 import { useState } from "react";
