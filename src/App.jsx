@@ -1,17 +1,15 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
 import Lights from "./components/Lights";
-import Geometries from "./components/Geometries";
-import {
-    ContactShadows,
-    OrbitControls,
-    PresentationControls,
-} from "@react-three/drei";
+import { ContactShadows, PresentationControls } from "@react-three/drei";
 import { CineonToneMapping } from "three";
 import Model from "./components/model";
 import Env from "./components/Env";
 import Menu from "./components/Menu";
 import { useState } from "react";
+import Nav from "./components/Nav";
+import Loader from "./components/Loader";
+import BtnComprar from "./components/BtnComprar";
 
 function App() {
     const cameraSetting = {
@@ -21,12 +19,12 @@ function App() {
         position: [0, 2, 20],
     };
 
-    const [colorBtn, setColorBtn] = useState('#FFF')
-    const [load, setLoad] = useState(false)
-
+    const [colorBtn, setColorBtn] = useState("#FFF");
+    const [load, setLoad] = useState(false);
 
     return (
         <>
+            <Loader load={load} />
             <Canvas
                 shadows
                 camera={cameraSetting}
@@ -41,9 +39,9 @@ function App() {
                 <PresentationControls
                     global
                     rotation={[0, 0, 0]}
-                    polar={[-0.15, 0.2]}
-                    azimuth={[-1, 1]}
-                    config={{ mass: 2, tension: 500, friction: 50 }}
+                    polar={[-0, 0]}
+                    azimuth={[-.2, .2]}
+                    config={{ mass: 10, tension: 500, friction: 50 }}
                     snap={{
                         rotation: [-0.1, 2.0, 0.1],
                         polar: [-0.4, 0.2],
@@ -56,12 +54,15 @@ function App() {
                 <Env />
                 <Lights />
                 <ContactShadows
-                    position-y={-3}
+                    position-y={-2.75}
                     scale={10}
                     opacity={0.55}
                     blur={2}
                 />
             </Canvas>
+            
+            <Nav load={load} />
+            {load ? <BtnComprar/> : null}
             {load ? <Menu setColorBtn={setColorBtn} /> : null}
         </>
     );

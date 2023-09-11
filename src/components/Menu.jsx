@@ -1,24 +1,39 @@
+import { memo } from "react";
 
+const Menu = memo(({ setColorBtn }) => {
+    const colores = {
+        rojo: "#CB1A1A",
+        negro: "#000000",
+        azul: "#1946a8",
+        rosa: "#EA45DD",
+        blanco: "#FFF",
+        verde: "#0cc30c",
+    };
 
-const Menu = ({setColorBtn}) => {
-    return (
-        <div className='menu'>
-            <div className='contenedor_colores'>
-                <button className='colores color1'
-                    onClick={() => setColorBtn('#cb1a1a')}
+    const createBtn = (color) => {
+        return (
+            <div className='btn_color' key={color}>
+                <button
+                    className='color'
+                    style={{ backgroundColor: colores[color] }}
+                    onClick={() => setColorBtn(colores[color])}
                 ></button>
-                <button className='colores color2'
-                    onClick={() => setColorBtn('#000000')}
-                ></button>
-                <button className='colores color3'
-                    onClick={() => setColorBtn('#102c68')}
-                ></button>
-                <button className='colores color4'
-                    onClick={() => setColorBtn('#ea45dd')}
-                ></button>
+                <p>{color}</p>
             </div>
-        </div>
+        );
+    };
+
+    return (
+        <>
+            <div className='menu'>
+                <h3>Colores Disponibles:</h3>
+                <div className='contenedor_colores'>
+                    {Object.keys(colores).map((color) => createBtn(color))}
+                </div>
+                <p>Tocá para cambiar de color !</p>
+            </div>
+        </>
     );
-};
+});
 
 export default Menu;

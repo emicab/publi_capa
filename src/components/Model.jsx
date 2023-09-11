@@ -9,6 +9,8 @@ const Model = ({colorBtn, setLoad}) => {
     const model = useRef()
 
     nodes.Capa.material.color = new THREE.Color(colorBtn);
+    nodes.Capa.material.roughness = 0.7;
+    nodes.Capa.material.metalness = 0.2;
 
   /*   console.log(nodes) */
     useFrame((state, delta) => {
@@ -18,7 +20,7 @@ const Model = ({colorBtn, setLoad}) => {
     })
     setLoad(true)
     return <Suspense>
-        <primitive ref={model} object={scene} position-y={-3} />;
+        <primitive ref={model} object={scene} position-y={-2.7} />;
     </Suspense>
 };
 
