@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { Suspense, useRef } from "react";
-import Placeholder from "./Placeholder";
+
 
 const Model = ({colorBtn, setLoad}) => {
     const {scene, nodes} = useGLTF("./capa_model.glb");
