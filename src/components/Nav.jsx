@@ -6,7 +6,7 @@ const Nav = ({ load }) => {
             <div className='logo'>
                 <img src='./logo.png' alt='' className="logo_nav" />
             </div>
-             <h2>Capa impermeble</h2>
+             <h2>Capa impermeable rompeviento</h2>
         </nav>
     );
 };

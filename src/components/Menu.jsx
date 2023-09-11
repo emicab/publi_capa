@@ -18,7 +18,6 @@ const Menu = memo(({ setColorBtn }) => {
                     style={{ backgroundColor: colores[color] }}
                     onClick={() => setColorBtn(colores[color])}
                 ></button>
-                <p>{color}</p>
             </div>
         );
     };

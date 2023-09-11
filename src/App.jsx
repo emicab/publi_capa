@@ -61,8 +61,8 @@ function App() {
                 />
             </Canvas>
             
-            <Nav load={load} />
             {load ? <BtnComprar/> : null}
+            <Nav load={load} />
             {load ? <Menu setColorBtn={setColorBtn} /> : null}
         </>
     );
