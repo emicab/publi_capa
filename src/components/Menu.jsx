@@ -7,7 +7,7 @@ const Menu = memo(({ setColorBtn }) => {
         azul: "#1946a8",
         rosa: "#EA45DD",
         blanco: "#FFF",
-        verde: "#0cc30c",
+        verde: "#1daa1d",
     };
 
     const createBtn = (color) => {
