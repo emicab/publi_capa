@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-const Menu = memo(({ setColorBtn }) => {
+const Menu = memo(({ setColorBtn, setColorPick }) => {
     const colores = {
         rojo: "#CB1A1A",
         negro: "#000000",
@@ -9,14 +9,18 @@ const Menu = memo(({ setColorBtn }) => {
         blanco: "#FFF",
         verde: "#1daa1d",
     };
-
+    
     const createBtn = (color) => {
+        
         return (
             <div className='btn_color' key={color}>
                 <button
                     className='color'
                     style={{ backgroundColor: colores[color] }}
-                    onClick={() => setColorBtn(colores[color])}
+                    onClick={() => {
+                        setColorBtn(colores[color])
+                        setColorPick(color)
+                    }}
                 ></button>
             </div>
         );

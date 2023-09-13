@@ -21,6 +21,7 @@ function App() {
 
     const [colorBtn, setColorBtn] = useState("#FFF");
     const [load, setLoad] = useState(false);
+    const [colorPick, setColorPick] = useState('')
 
     return (
         <>
@@ -61,8 +62,8 @@ function App() {
                 />
             </Canvas>
             <Nav load={load} />
-            {load ? <BtnComprar /> : null}
-            {load ? <Menu setColorBtn={setColorBtn} /> : null}
+            {load ? <BtnComprar colorPick={colorPick} /> : null}
+            {load ? <Menu setColorBtn={setColorBtn} setColorPick={setColorPick} /> : null}
         </>
     );
 }
