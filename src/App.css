@@ -97,18 +97,32 @@ nav{
 }
 
 /* BTN COMPRAR */
-.cont_btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 200px;
-    height: 30px;
-    border-radius: 13px;
-    background-color: #3bec64;
-    text-decoration: none;
-    color: #000000;
-    text-transform: uppercase;
+.cont {
+    position: absolute;
+    transform: translate(0, -180px);
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    
+    
+    & .cont_btn{
+        width: 60px;
+        height: 30px;
+        border: 1px solid red;
+        text-decoration: none;
+        color: #ffffff;
+        text-transform: uppercase;
+        
+        & p {
+            margin: 0 auto;
+            padding: 10px;
+            width: 160px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #1dc81d;
+            font-weight: bold;
+        }
+    }
 }
 
 /* RESPONSIVE MOBILE */
@@ -117,8 +131,6 @@ nav{
         margin-bottom: 10px;
     }
 }
-
-
 
 @media (min-width: 800px) {
     .menu {
@@ -147,8 +159,6 @@ nav{
             text-align: center;
         }
     }
-    .cont_btn{
-        bottom: 120px;
-        left: 45.5%;
-    }
+    
+    
 }

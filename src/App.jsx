@@ -1,12 +1,12 @@
 import "./App.css";
 import { Canvas } from "@react-three/fiber";
-import Lights from "./components/Lights";
 import { ContactShadows, PresentationControls } from "@react-three/drei";
 import { CineonToneMapping } from "three";
+import { useState } from "react";
+import Lights from "./components/Lights";
 import Model from "./components/Model";
 import Env from "./components/Env";
 import Menu from "./components/Menu";
-import { useState } from "react";
 import Nav from "./components/Nav";
 import Loader from "./components/Loader";
 import BtnComprar from "./components/BtnComprar";
@@ -40,7 +40,7 @@ function App() {
                     global
                     rotation={[0, 0, 0]}
                     polar={[-0, 0]}
-                    azimuth={[-.2, .2]}
+                    azimuth={[-0.2, 0.2]}
                     config={{ mass: 10, tension: 500, friction: 50 }}
                     snap={{
                         rotation: [-0.1, 2.0, 0.1],
@@ -60,9 +60,8 @@ function App() {
                     blur={2}
                 />
             </Canvas>
-            
-            {load ? <BtnComprar/> : null}
             <Nav load={load} />
+            {load ? <BtnComprar /> : null}
             {load ? <Menu setColorBtn={setColorBtn} /> : null}
         </>
     );
